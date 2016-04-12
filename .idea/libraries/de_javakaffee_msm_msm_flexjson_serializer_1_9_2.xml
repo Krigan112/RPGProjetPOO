@@ -1,0 +1,26 @@
+<component name="libraryTable">
+  <library name="de.javakaffee.msm:msm-flexjson-serializer:1.9.2" type="repository">
+    <properties maven-id="de.javakaffee.msm:msm-flexjson-serializer:1.9.2" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/msm-flexjson-serializer-1.9.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/memcached-session-manager-1.9.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spymemcached-2.12.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/couchbase-client-1.4.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/netty-3.5.5.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jettison-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/stax-api-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/httpcore-nio-4.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsr305-3.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/annotations-3.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jcip-annotations-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/flexjson-3.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/juli-6.0.45.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/coyote-6.0.45.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/servlet-api-6.0.45.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/catalina-6.0.45.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/annotations-api-6.0.45.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
