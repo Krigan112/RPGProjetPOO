@@ -10,4 +10,14 @@ public class Spell {
         this.damages = damages;
         this.ammo = ammo;
     }
+
+    //Getters
+    public String getName() {return name;}
+    public int getAmmo() {return ammo;}
+    public int getDamages() {return damages;}
+
+    //Setters
+    public void setAmmo(int ammo) {
+        this.ammo = ammo;
+    }
 }

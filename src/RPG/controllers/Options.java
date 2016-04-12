@@ -10,6 +10,8 @@ public class Options
 {
     public static void newGame(){
         Player player = new Player();
+        player.addSpell("Boule de feu", 20, 2);
+        player.addSpell("Eclair", 5, 6);
         Scanner in = new Scanner(System.in);
         RPG.views.Utils.chooseYourName(player, in);
         Game.newGame(player);

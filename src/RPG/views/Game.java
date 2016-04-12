@@ -91,6 +91,7 @@ public class Game {
                     Program.fight(player, livingArmor);
                     Utils.textLine("Vous avez vaincu l'armure vivante et avez récupéré son espadon "+broadsword.getDamagesAsString()+" !");
                     player.setWeapon(broadsword);
+                    Utils.textLine("Vous vous dirigez ensuite vers la porte à droite, qui vous mène à une cour avec un feu de camp au milieu..");
                     break;
                 case 3:
                     Utils.textLine("La porte à droite vous mène à une cour avec un feu de camp au milieu.");

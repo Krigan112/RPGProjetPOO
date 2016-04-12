@@ -2,8 +2,6 @@ package RPG.views;
 
 import RPG.models.Player;
 import RPG.models.Character;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Utils
@@ -26,7 +24,6 @@ public class Utils
     }
 
     public static String healthGauge(Character character){
-//        ArrayList <String> gaugeAsList = new ArrayList<>();
         String gauge = "";
         for(int i=1; i<=character.getHealthPoints(); i++){
             gauge = gauge+"=";

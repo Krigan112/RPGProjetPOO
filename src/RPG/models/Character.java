@@ -21,7 +21,8 @@ public class Character implements Serializable
     public int getDamages(){return this.weapon.getDamages();}
     public int getDefense(){return this.armor.getDefense();}
 
-    public void looseHealth(int amount) {
+    public int looseHealth(int amount) {
         this.healthPoints = this.healthPoints-amount;
+        return amount;
     }
 }
