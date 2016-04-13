@@ -10,14 +10,16 @@ public class Program
         RPG.views.Menu.run();
     }
 
-    public static void fight(Player player, Monster monster){
+    public static boolean fight(Player player, Monster monster){
         while(player.getHealthPoints()!=0 && monster.getHealthPoints()!=0){
 
-            player.action(player, monster);
+            if(!player.action(player, monster)){
+                return false;
+            }
 
             if(monster.getHealthPoints()<=0){
                 Utils.textLine("Vous avez tué "+monster.getName()+".");
-                break;
+                return true;
             }
 
             monster.attack(player, monster);
@@ -25,8 +27,8 @@ public class Program
             if(player.getHealthPoints()<=0){
                 Utils.textLine("Vous êtes mort.");
                 RPG.views.Menu.run();
-                break;
             }
         }
+        return false;
     }
 }

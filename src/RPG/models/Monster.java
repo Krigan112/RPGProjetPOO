@@ -1,14 +1,13 @@
 package RPG.models;
 
-import RPG.views.Utils;
-
 public class Monster extends Character
 {
-    public Monster(String name, int healthPoints, Weapon weapon, Armor armor){
+    public Monster(String name, int healthPoints, int speed, Weapon weapon, Armor armor){
         this.name = name;
         this.healthPoints = healthPoints;
         this.weapon = weapon;
         this.armor = armor;
+        this.speed = speed;
     }
 
     public Monster(){

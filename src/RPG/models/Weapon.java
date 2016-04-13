@@ -2,14 +2,15 @@ package RPG.models;
 
 import java.util.Random;
 
-public class Weapon {
+public class Weapon extends Item{
 
     private int damagesMin;
     private int damagesMax;
 
-    public Weapon(int damagesMin, int damagesMax) {
+    public Weapon(String name, int damagesMin, int damagesMax) {
         this.damagesMin = damagesMin;
         this.damagesMax = damagesMax;
+        this.name = name;
     }
 
     //getters

@@ -15,8 +15,9 @@ public class Menu
         //System.out.println("4            Options");
         System.out.println("3            Quitter");
 
-        switch (in.nextInt()){
-            case 1:
+        String choice = in.next();
+        switch (choice){
+            case "1":
                 RPG.controllers.Options.newGame();
                 break;
             /*
@@ -24,7 +25,7 @@ public class Menu
                 RPG.controllers.Options.save(player);
                 break;
                 */
-            case 2:
+            case "2":
                 RPG.views.GameOptions.loadPannel(in);
                 break;
             /*
@@ -32,11 +33,11 @@ public class Menu
                 RPG.views.GameOptions.optionsPannel();
                 break;
             */
-            case 3:
+            case "3":
                 RPG.controllers.Options.exit();
                 break;
             default:
-                System.out.println("Ce choix n'est pas dans la liste...");
+                System.out.println("Veuillez choisir un chiffre de la liste.");
                 run();
         }
     }

@@ -9,6 +9,7 @@ public class Character implements Serializable
     protected int healthPoints;
     protected Weapon weapon;
     protected Armor armor;
+    public int speed;
 
     //setters
     public void setName(String name){this.name = name;}
