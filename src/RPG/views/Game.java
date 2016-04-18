@@ -117,5 +117,8 @@ public class Game {
                     choice = "0";
             }
         }
+        Utils.textLine("Vous vous approchez du feu de camp, et l'allumez.");
+        Utils.textLine("La chaleur vous réconforte, et vous êtes soigné");
+        Program.bonfire(player);
     }
 }

@@ -4,6 +4,9 @@ import RPG.models.Monster;
 import RPG.models.Player;
 import RPG.views.Utils;
 
+import java.util.Objects;
+import java.util.Scanner;
+
 public class Program
 {
     public static void main(String[] args){
@@ -30,5 +33,32 @@ public class Program
             }
         }
         return false;
+    }
+
+    public static void bonfire(Player player) {
+        Scanner inputBonfire = new Scanner(System.in);
+        String choice = "0";
+        while(Objects.equals(choice, "0")){
+            System.out.println("Feu de camp:\n1. Inventaire\n2. Sauvegarder\n3. Quitter");
+            choice = inputBonfire.next();
+            switch(choice){
+                case "1":
+                    Utils.inventory(player);
+                    break;
+                case "2":
+                    Options.save(player);
+                    break;
+                case "3":
+                    System.out.println("Êtes-vous sûr de vouloir quitter le jeu? Toute progression non sauvegardée sera perdue. o/n");
+                    if(Objects.equals(inputBonfire.next(), "o")){
+                        Options.exit();
+                    }else if(Objects.equals(inputBonfire.next(), "n")){
+                        choice = "0";
+                        break;
+                    }else{
+                        System.out.println("Veuillez entrer \"o\" ou \"n\"");
+                    }
+            }
+        }
     }
 }

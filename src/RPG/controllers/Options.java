@@ -19,15 +19,13 @@ public class Options
 
     public static void save(Player player) {
         FileOutputStream fileOutStr = null;
-        if (player.getName() == null) {
+        if (player.getName() != null) {
             try {
                 fileOutStr = new FileOutputStream(new File("src/RPG/saves/saveOf" + player.getName() + ".txt"));
                 ObjectOutputStream objOutStr = new ObjectOutputStream(fileOutStr);
 
                 objOutStr.writeObject(player);
 
-            } catch (FileNotFoundException err) {
-                err.printStackTrace();
             } catch (IOException err) {
                 err.printStackTrace();
             } finally {
@@ -48,17 +46,13 @@ public class Options
     public static void load(Player player){
         FileInputStream fileInStr = null;
         try{
-           fileInStr = new FileInputStream(new File("src/RPG/saves/saveOfBob.txt"));
+           fileInStr = new FileInputStream(new File("src/RPG/saves/saveOf"+player.getName()+".txt"));
            ObjectInputStream objInStr = new ObjectInputStream(fileInStr);
             player = (Player) objInStr.readObject();
 
-        }catch(FileNotFoundException err){
+        }catch(ClassNotFoundException | IOException err){
             err.printStackTrace();
-        }catch(IOException err){
-            err.printStackTrace();
-        }catch(ClassNotFoundException err){
-            err.printStackTrace();
-        }finally {
+        } finally {
             try{
                 if(fileInStr != null) fileInStr.close();
             }catch(IOException err){

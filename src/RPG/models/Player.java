@@ -10,6 +10,7 @@ public class Player extends Character
 
     private ArrayList<Spell> spellList = new ArrayList<>();
     private ArrayList<Item> inventory = new ArrayList<>();
+    private static final long serialVersionUID = 1L;
 
     public Player(){
         this.speed = 30;

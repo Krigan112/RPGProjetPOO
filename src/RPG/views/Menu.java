@@ -26,7 +26,7 @@ public class Menu
                 break;
                 */
             case "2":
-                RPG.views.GameOptions.loadPannel(in);
+                RPG.views.GameOptions.loadPannel();
                 break;
             /*
             case 4:

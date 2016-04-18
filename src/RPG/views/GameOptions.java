@@ -13,10 +13,12 @@ public class GameOptions
     }
     */
 
-    public static void loadPannel(Scanner in) {
+    public static void loadPannel() {
+        Scanner i = new Scanner(System.in);
         System.out.println("Veuillez entrer le nom du personnage que vous voulez charger : ");
         Player loadRequest = new Player();
-        loadRequest.setName(in.nextLine());
+        String name = i.nextLine();
+        loadRequest.setName(name);
         RPG.controllers.Options.load(loadRequest);
     }
 }

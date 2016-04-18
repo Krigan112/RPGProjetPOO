@@ -1,6 +1,8 @@
 package RPG.models;
 
-public class Spell {
+import java.io.Serializable;
+
+public class Spell implements Serializable {
     private String name;
     private int damages;
     private int ammo;
