@@ -11,17 +11,24 @@ public class Player extends Character
     private ArrayList<Spell> spellList = new ArrayList<>();
     private ArrayList<Item> inventory = new ArrayList<>();
     private static final long serialVersionUID = 1L;
+    private String savePoint;
 
     public Player(){
         this.speed = 30;
         this.healthPoints = 100;
     }
 
+    //getters
+    public String getSavePoint(){return savePoint;}
     public ArrayList<Spell> getSpells(){return spellList;}
     public ArrayList<Item> getInventory(){return inventory;}
 
+    //setters
+    public void setSavePoint(String savePoint) {this.savePoint = savePoint;}
+    public void setHealthPoints(int healthPoints) {this.healthPoints = healthPoints;}
+
     // if action() returns true, the player just do something (like attack or cast a spell)
-    // but if action() returns false, it meeans that he didn't do anything. so he flyed;
+    // but if action() returns false, it means that he didn't do anything. so he flyed;
     public boolean action(Player player, Monster monster) {
         Scanner in = new Scanner(System.in);
         System.out.println("Vous: "+Utils.healthGauge(player));
@@ -71,7 +78,10 @@ public class Player extends Character
     }
 
     public void equip(int item){
-        if((this.getInventory().get(item))instanceof Weapon){
+        if((this.getInventory().get(item))instanceof Potion){
+            System.out.println("Vous avez bu: "+this.getInventory().get(item).getName());
+            this.drinkPotion((Potion)this.getInventory().get(item), item);
+        }else if((this.getInventory().get(item))instanceof Weapon){
             this.setWeapon((Weapon) this.getInventory().get(item));
             System.out.println("Vous avez équipé: "+weapon.getName()+weapon.getDamagesAsString());
         }else if((this.getInventory().get(item))instanceof Armor){
@@ -80,6 +90,15 @@ public class Player extends Character
         }else{
             System.out.println("Vous ne pouvez pas vous équiper de cet objet.");
         }
+    }
+
+    private void drinkPotion(Potion potion, int index) {
+        this.setHealthPoints(this.getHealthPoints()+potion.getAmmount());
+        this.deleteItem(index);
+    }
+
+    private void deleteItem(int index) {
+        this.getInventory().remove(index);
     }
 
     private void attack(Monster monster) {

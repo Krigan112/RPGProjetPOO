@@ -1,6 +1,7 @@
 package RPG.controllers;
 import RPG.models.Player;
 import RPG.views.Game;
+import RPG.views.Menu;
 
 import java.io.*;
 import java.util.Scanner;
@@ -14,6 +15,7 @@ public class Options
         player.addSpell("Eclair", 5, 6);
         Scanner in = new Scanner(System.in);
         RPG.views.Utils.chooseYourName(player, in);
+        player.setSavePoint("begin");
         Game.newGame(player);
     }
 
@@ -51,6 +53,8 @@ public class Options
             player = (Player) objInStr.readObject();
 
         }catch(ClassNotFoundException | IOException err){
+            System.out.println("Erreur! Ce nom de joueur n'existe pas!");
+            Menu.run();
             err.printStackTrace();
         } finally {
             try{
@@ -60,6 +64,7 @@ public class Options
             }
         }
         System.out.println("Chargement réussi! Bonjour, "+player.getName());
+        Game.newGame(player);
     }
 
     public static void exit(){

@@ -3,18 +3,25 @@ package RPG.views;
 import RPG.models.Monster;
 import RPG.models.Player;
 import RPG.models.Character;
+
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Utils
 {
     public static void chooseYourName(Player player, Scanner in) {
-        System.out.println("Entrez le nom de votre personnage : ");
-        player.setName(in.nextLine());
-        System.out.println("Vous vous appelez donc \""+player.getName()+"\" ? (o/n)");
-        if(in.nextLine().equals("o")){
-            System.out.println("D'accord! "+player.getName()+" préparez vous...");
-        }else{
-            chooseYourName(player, in);
+        String choice = "0";
+        while(Objects.equals(choice, "0")) {
+            System.out.println("Entrez le nom de votre personnage : ");
+            player.setName(in.nextLine());
+            System.out.println("Vous vous appelez donc \"" + player.getName() + "\" ? (o/n)");
+            if (Objects.equals(in.next(), "o")) {
+                break;
+            } else if (Objects.equals(in.next(), "n")) {
+                choice = "0";
+            } else {
+                System.out.println("Veuillez entrer \"o\" ou \"n\"");
+            }
         }
     }
 
@@ -57,7 +64,7 @@ public class Utils
             System.out.println("Vous n'avez pas d'objets.");
             return "0";
         }
-        System.out.println("Choisissez un objet à équiper :");
+        System.out.println("Choisissez un objet à équiper/utiliser :");
         for (int i = 0; i < player.getInventory().size(); i++) {
             System.out.println(i + 1 + ". " + player.getInventory().get(i).getName());
         }
