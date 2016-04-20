@@ -21,7 +21,7 @@ public class Game {
 
         //Declarations of armors(name, defense)
         Armor noArmor = new Armor("", 0);
-        Armor lightArmor = new Armor("Armure légère", 5);
+        Armor lightArmor = new Armor("Armure légère", 4);
         Armor steelArmor = new Armor("Armure en acier", 30);
 
         //Declarations of weapons(name, damagesMax, damagesMin)
@@ -120,29 +120,37 @@ public class Game {
                 }
             }
             player.setSavePoint("cour");
-        }if(Objects.equals(player.getSavePoint(), "cour")) {
-            Utils.textLine("Vous vous approchez du feu de camp, et l'allumez.");
-            Utils.textLine("La chaleur vous réconforte, et vous êtes soigné");
-            Program.bonfire(player, "cour");
-            System.out.println("Vous pouvez partir par trois chemins :\n1. Gauche dans les égouts\n2. Droite vers les couloirs\n3. Tout droit vers une énorme porte");
-            String choice = "0";
-            while (Objects.equals(choice, "0")) {
-                choice = in.next();
-                switch (choice) {
-                    case "1":
-                        RPG.views.Sewer.sewer();
-                        break;
-                    case "2":
-                        RPG.views.Hall.hall();
-                        break;
-                    case "3":
-                        RPG.views.WasteLands.wasteLands(player);
-                        break;
-                    default:
-                        System.out.println("Veuillez choisir un chiffre de la liste");
-                        choice = "0";
-                        break;
-                }
+        }
+        if(Objects.equals(player.getSavePoint(), "oasis")||(Objects.equals(player.getSavePoint(), "youth"))){
+            RPG.views.WasteLands.wasteLands(player);
+        }
+        if(Objects.equals(player.getSavePoint(), "sewer")){
+            RPG.views.Sewer.sewer(player);
+        }
+        if(Objects.equals(player.getSavePoint(), "hall")){
+            RPG.views.Hall.hall(player);
+        }
+        Utils.textLine("Vous vous approchez du feu de camp, et l'allumez.");
+        Utils.textLine("La chaleur vous réconforte, et vous êtes soigné");
+        Program.bonfire(player, "cour");
+        System.out.println("Vous pouvez partir par trois chemins :\n1. Gauche dans les égouts\n2. Droite vers les couloirs\n3. Tout droit vers une énorme porte");
+        String choice = "0";
+        while (Objects.equals(choice, "0")) {
+            choice = in.next();
+            switch (choice) {
+                case "1":
+                    RPG.views.Sewer.sewer(player);
+                    break;
+                case "2":
+                    RPG.views.Hall.hall(player);
+                    break;
+                case "3":
+                    RPG.views.WasteLands.wasteLands(player);
+                    break;
+                default:
+                    System.out.println("Veuillez choisir un chiffre de la liste");
+                    choice = "0";
+                    break;
             }
         }
     }

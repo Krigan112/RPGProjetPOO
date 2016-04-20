@@ -54,7 +54,7 @@ public class Utils
         } else{
             System.out.println("Veuillez choisir un chiffre de la liste.");
             spells(player, monster);
-            return "2";
+            return "0";
         }
     }
 

@@ -102,7 +102,11 @@ public class Player extends Character
     }
 
     private void attack(Monster monster) {
-        int damages = monster.looseHealth(this.getDamages()-monster.getDefense());
+        int damages = -1;
+        while(damages<0) {
+            damages = this.getDamages() - monster.getDefense();
+        }
+        monster.looseHealth(damages);
         System.out.println(monster.getName()+" a perdu "+(damages-monster.getDefense())+" points de vie. Il lui reste "+monster.getHealthPoints()+"PV");
     }
 

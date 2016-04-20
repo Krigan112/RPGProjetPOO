@@ -22,7 +22,9 @@ public class WasteLands {
         Weapon claw = new Weapon("Griffes", 4, 9);
 
         //Declarations of monsters(name, healthPoints, speed, weapon, armor)
-        Monster drunkard = new Monster("L'ivrogne", 60, 50, dagger, noArmor);
+        Monster drunkard1 = new Monster("L'ivrogne", 60, 50, dagger, noArmor);
+        Monster drunkard2 = new Monster("L'ivrogne", 60, 50, dagger, noArmor);
+        Monster drunkard3 = new Monster("L'ivrogne", 60, 50, dagger, noArmor);
         Monster panther = new Monster("La panthère", 90, 200, claw, noArmor);
 
         boolean wasteLandsHelp = false;
@@ -70,35 +72,39 @@ public class WasteLands {
                 Utils.textLine("Ils vous invitent à vous joindre à eux!");
                 Program.bonfire(player, "oasis");
             }
-        }
-        if (!wasteLandsHelp) {
-            Utils.textLine("Vous continuez votre route vers l'Est.");
-            Utils.textLine("Après de longues heures de marche, vous vous retournez, et vous vous appercevez que la prison est bien loin.");
-            Utils.textLine("Vous commencez à avoir soif.");
-            Utils.textLine("Vous voyez au loin une forme rappellant un bâtiment, et vous dirigez donc vers celle-ci.");
-            Utils.textLine("Arrivé là bas, un grand homme vous barre la route:");
-            Utils.textLine("Hé! Où compte-tu aller comme ça? Cette maison ne t'appartient pas!");
-            Utils.textLine("Hmm... Tu m'a l'air bien mal en point.");
-            Utils.textLine("Bon. Ça va pour cette fois. Entre!");
-            Utils.textLine("Vous entrez et voyez des gens festoyer au centre de la pièce.");
-            Utils.textLine("Une grosse dame vous propose une bière, et vous acceptez.");
-            Utils.textLine("Tout à coup, vous entendez le ton monter vers la table au milieu de la pièce.");
-            Utils.textLine("Un des hommes se lève, dégaine son épée, et tranche la gorge de son voisin d'en face!");
-            Utils.textLine("Les deux homme restants se lèvent à leur tour, et dégainent eux aussi leur armes.");
-            Utils.textLine("Vous vous retrouvez pris dans une bagarre d'ivrognes malgré vous.");
-            Program.fight(player, drunkard);
-            Utils.textLine("Un deuxième ivrogne se dirige vers vous!");
-            Program.fight(player, drunkard);
-            Utils.textLine("Jamais deux sans trois...");
-            Program.fight(player, drunkard);
-            Utils.textLine("Après avoir vaicu les ivrognes, vous vous laissez tomber dans un fauteuil près de la cheminée.");
-            Program.bonfire(player, "youth");
+            if (!wasteLandsHelp) {
+                Utils.textLine("Vous continuez votre route vers l'Est.");
+                Utils.textLine("Après de longues heures de marche, vous vous retournez, et vous vous appercevez que la prison est bien loin.");
+                Utils.textLine("Vous commencez à avoir soif.");
+                Utils.textLine("Vous voyez au loin une forme rappellant un bâtiment, et vous dirigez donc vers celle-ci.");
+                Utils.textLine("Arrivé là bas, un grand homme vous barre la route:");
+                Utils.textLine("Hé! Où compte-tu aller comme ça? Cette maison ne t'appartient pas!");
+                Utils.textLine("Hmm... Tu m'a l'air bien mal en point.");
+                Utils.textLine("Bon. Ça va pour cette fois. Entre!");
+                Utils.textLine("Vous entrez et voyez des gens festoyer au centre de la pièce.");
+                Utils.textLine("Une grosse dame vous propose une bière, et vous acceptez.");
+                Utils.textLine("Tout à coup, vous entendez le ton monter vers la table au milieu de la pièce.");
+                Utils.textLine("Un des hommes se lève, dégaine son épée, et tranche la gorge de son voisin d'en face!");
+                Utils.textLine("Les deux homme restants se lèvent à leur tour, et dégainent eux aussi leur armes.");
+                Utils.textLine("Vous vous retrouvez pris dans une bagarre d'ivrognes malgré vous.");
+                Program.fight(player, drunkard1);
+                Utils.textLine("Un deuxième ivrogne se dirige vers vous!");
+                Program.fight(player, drunkard2);
+                Utils.textLine("Jamais deux sans trois...");
+                Program.fight(player, drunkard3);
+                Utils.textLine("Après avoir vaicu les ivrognes, vous vous laissez tomber dans un fauteuil près de la cheminée.");
+                Program.bonfire(player, "youth");
+            }
         }
         if (Objects.equals(player.getSavePoint(), "oasis")) {
             Program.bonfire(player, "oasis");
+            Utils.textLine("Ceci est la fin du jeu pour l'instant! Merci d'avoir joué!");
+            Menu.run();
         }
         if(Objects.equals(player.getSavePoint(), "youth")){
             Program.bonfire(player, "youth");
+            Utils.textLine("Ceci est la fin du jeu pour l'instant! Merci d'avoir joué!");
+            Menu.run();
         }
     }
 }
