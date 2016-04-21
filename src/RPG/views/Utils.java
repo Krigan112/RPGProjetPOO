@@ -17,7 +17,7 @@ public class Utils
             System.out.println("Vous vous appelez donc \"" + player.getName() + "\" ? (o/n)");
             if (Objects.equals(in.next(), "o")) {
                 break;
-            } else if (Objects.equals(in.next(), "n")) {
+            } else if (Objects.equals(in.nextLine(), "n")) {
                 choice = "0";
             } else {
                 System.out.println("Veuillez entrer \"o\" ou \"n\"");

@@ -48,7 +48,7 @@ public class Game {
             Utils.textLine("Vous rencontrez un homme vêtu d'un pagne il est de dos. Que faites vous?");
             while (Objects.equals(choice, "0")) {
                 System.out.println("1. Vous vous approchez pour lui parler\n2. Vous le frappez dans le dos\n3. Vous passez votre chemin");
-                choice = in.next();
+                choice = in.nextLine();
                 switch (choice) {
                     case "1":
                         Utils.textLine("Il se retourne et vous voyez son visage décomposé. Cet homme est visiblement déjà mort.");
@@ -86,7 +86,7 @@ public class Game {
                 } else {
                     System.out.println("1. La cellule à gauche\n2. Tout droit dans le couloir\n3. La porte à droite");
                 }
-                choice = in.next();
+                choice = in.nextLine();
                 switch (choice) {
                     case "1":
                         if (firstPast) {
@@ -136,7 +136,7 @@ public class Game {
         System.out.println("Vous pouvez partir par trois chemins :\n1. Gauche dans les égouts\n2. Droite vers les couloirs\n3. Tout droit vers une énorme porte");
         String choice = "0";
         while (Objects.equals(choice, "0")) {
-            choice = in.next();
+            choice = in.nextLine();
             switch (choice) {
                 case "1":
                     RPG.views.Sewer.sewer(player);
