@@ -33,7 +33,7 @@ public class Player extends Character
         Scanner in = new Scanner(System.in);
         System.out.println("Vous: "+Utils.healthGauge(player));
         System.out.println("Adversaire: "+Utils.healthGauge(monster));
-        Utils.textLine("Que faites vous?");
+        System.out.println("Que faites vous?");
         String choice = "0";
         while(Objects.equals(choice, "0")) {
             System.out.println("1. Attaque\n2. Magie\n3. Fuir\n4. Inventaire");

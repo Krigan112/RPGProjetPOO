@@ -24,14 +24,14 @@ public class Sewer {
             Weapon noWeapon = new Weapon("", 0, 0);
             Weapon dagger = new Weapon("Dague", 2, 5);
             Weapon claw = new Weapon("Griffes", 4, 9);
-            Weapon rustedSword = new Weapon("Epée rouillée", 0, 2);
+            Weapon Sword = new Weapon("Epée rouillée", 4, 6);
 
             //Declarations of monsters(name, healthPoints, speed, weapon, armor)
             Monster drunkard = new Monster("L'ivrogne", 60, 50, dagger, noArmor);
             Monster panther = new Monster("La panthère", 90, 200, claw, noArmor);
             Monster giantRat = new Monster("Le rat géant", 50, 100, claw, noArmor);
-            Monster knight = new Monster("Le chevalier", 100, 10, rustedSword, lightArmor);
-            Monster knight2 = new Monster("Le chevalier", 100, 50, rustedSword, lightArmor);
+            Monster knight = new Monster("Le chevalier", 100, 10, Sword, lightArmor);
+            Monster knight2 = new Monster("Le chevalier", 100, 50, Sword, lightArmor);
 
             Utils.textLine("Vous entrez dans les égouts.");
             Utils.textLine("L'odeur nauséabonde vous prends au nez, et vous vous retrouvez dans l'obscurité.");
