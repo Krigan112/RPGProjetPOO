@@ -110,12 +110,18 @@ public class Player extends Character
         System.out.println(monster.getName()+" a perdu "+(damages-monster.getDefense())+" points de vie. Il lui reste "+monster.getHealthPoints()+"PV");
     }
 
-    public void addSpell(String name, int damages, int ammo){
-        Spell newSpell = new Spell(name, damages, ammo);
+    public void addSpell(String name, int damages, int ammoMax){
+        Spell newSpell = new Spell(name, damages, ammoMax);
         this.spellList.add(newSpell);
     }
 
     public void addItem(Item item){
         this.inventory.add(item);
+    }
+
+    public void reloadSpells() {
+        for(int i = 0; i<=this.getSpells().size();i++){
+            this.getSpells().get(i).setAmmo(this.getSpells().get(i).getAmmoMax());
+        }
     }
 }

@@ -37,6 +37,7 @@ public class Program
 
     public static void bonfire(Player player, String savepoint) {
         player.setHealthPoints(100);
+        player.reloadSpells();
         Scanner inputBonfire = new Scanner(System.in);
         String choice = "0";
         while(Objects.equals(choice, "0")){
