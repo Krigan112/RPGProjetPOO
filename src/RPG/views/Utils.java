@@ -13,9 +13,18 @@ public class Utils
         String choice = "0";
         while(Objects.equals(choice, "0")) {
             System.out.println("Entrez le nom de votre personnage : ");
-            player.setName(in.nextLine());
+            String verif = in.nextLine();
+            if(verif.contains("/")||verif.contains("\\")||verif.contains(":")||verif.contains("*")||verif.contains("?")||verif.contains("\"")||verif.contains("<")||verif.contains(">")||verif.contains("|")){
+                System.out.println("Erreur! Votre nom contient des caractères interdits!");
+                choice = "0";
+            }
+            if(verif.length()>34){
+                System.out.println("Erreur! Votre nom est trop long!");
+                choice = "0";
+            }
             System.out.println("Vous vous appelez donc \"" + player.getName() + "\" ? (o/n)");
-            if (Objects.equals(in.next(), "o")) {
+            if (Objects.equals(in.nextLine(), "o")) {
+                player.setName(verif);
                 break;
             } else if (Objects.equals(in.nextLine(), "n")) {
                 choice = "0";
